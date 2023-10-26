@@ -1,0 +1,31 @@
+spring:
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+  datasource:
+    driver: postgresql
+    url: jdbc:postgresql://127.0.0.1:5432/file_upload_demo
+    username: postgres
+    password: postgres
+    pool:
+      enabled: true
+      initial-size: 5
+
+config:
+  aws:
+    region: us-east-1
+    s3:
+      url: http://127.0.0.1:4566
+      bucket-name: demo-s3-bucket
+      access-key: localstack
+      secret-key: localstack
+
+upload:
+  config:
+    max-size: 5242880
+    time-per-day: 10
+
+jwt:
+  secret: ======================UploadFile=Spring=========================
+  expirationMs: 86400000
